@@ -45,11 +45,40 @@ public class IsPalindrome {
     }
 
     public static boolean isPalindrome(ListNode head) {
+        if(head == null ){
+            return true;
+        }
+        ListNode temp = head;
+        ListNode reverseList = new ListNode(0);
+
+        while (temp != null){
+            ListNode node = new ListNode(temp.val);
+            node.next = reverseList;
+            reverseList = node;
+
+            temp = temp.next;
+
+        }
+        temp = reverseList;
+        ListNode temp2 = head;
+        while (temp2 != null ){
+            if(temp.val != temp2.val){
+                return false;
+            }
+            temp = temp.next;
+
+            temp2 = temp2.next;
+        }
+
         return true;
     }
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome2(12233221));
+        ListNode test = new ListNode(1);
+        test.next = new ListNode(2);
+        test.next.next = new ListNode(1);
+
+        System.out.println(isPalindrome(test));
     }
 }
 
@@ -57,7 +86,5 @@ public class IsPalindrome {
       int val;
       ListNode next;
       ListNode(int x) { val = x; }
-
-
   }
 
