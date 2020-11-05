@@ -80,11 +80,12 @@ public class IsPalindrome {
         }
         int headIndex = 0;
         int lastIndex = s.length()-1;
+        int firstTolast = 0;
+        int lastToFirst = 0;
         while( headIndex != lastIndex){
-            int firstTolast = s.charAt(headIndex);
-            int lastToFirst = s.charAt(lastIndex);
-            char first = s.charAt(headIndex);
-            char last = s.charAt(lastIndex);
+            firstTolast = s.charAt(headIndex);
+            lastToFirst = s.charAt(lastIndex);
+
             if( firstTolast<48 ||(firstTolast >57&& firstTolast < 65) || ( firstTolast > 90 &&  firstTolast<97)  || firstTolast>122 ){
                 headIndex++;
                 continue;
