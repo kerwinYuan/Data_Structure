@@ -73,13 +73,58 @@ public class IsPalindrome {
         return true;
     }
 
-    public static void main(String[] args) {
-        ListNode test = new ListNode(1);
-        test.next = new ListNode(2);
-        test.next.next = new ListNode(1);
+    public static boolean isPalindrome(String s) {
 
-        System.out.println(isPalindrome(test));
+        if(s == null || "".equals(s)){
+            return true;
+        }
+        int headIndex = 0;
+        int lastIndex = s.length()-1;
+        int firstTolast = 0;
+        int lastToFirst = 0;
+        while( headIndex != lastIndex){
+            firstTolast = s.charAt(headIndex);
+            lastToFirst = s.charAt(lastIndex);
+
+            if( firstTolast<48 ||(firstTolast >57&& firstTolast < 65) || ( firstTolast > 90 &&  firstTolast<97)  || firstTolast>122 ){
+                headIndex++;
+                continue;
+
+            }else if(firstTolast >= 65 && firstTolast<=90){
+                firstTolast+=32;
+            }
+            if(  lastToFirst<48 ||(lastToFirst >57&& lastToFirst < 65) || ( lastToFirst > 90 &&  lastToFirst<97)  || lastToFirst>122 ){
+                lastIndex--;
+                continue;
+            }else if(lastToFirst >= 65 && lastToFirst<=90){
+                lastToFirst+=32;
+            }
+
+            if(firstTolast != lastToFirst){
+                System.out.println("headIndex:"+headIndex+" lastIndex:"+lastIndex);
+                System.out.println("firstTolast:"+(char)firstTolast+" lastToFirst:"+(char)lastToFirst);
+                return false;
+            }
+            headIndex++;
+            if(headIndex == lastIndex){
+                return true;
+            }
+            lastIndex--;
+
+        }
+        return true;
     }
+
+    public static void main(String[] args) {
+//        ListNode test = new ListNode(1);
+//        test.next = new ListNode(2);
+//        test.next.next = new ListNode(1);
+//        char a = 'Z';
+//        char b = 'z';
+//        System.out.println((int)a -b);
+
+        System.out.println(isPalindrome("0P0"));
+}
 }
 
     class ListNode {
