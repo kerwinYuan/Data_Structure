@@ -1,9 +1,9 @@
-package design_mode.factory.abstractFactory;
+package designMode.factory.abstractFactory;
 
-import design_mode.factory.abstractFactory.color.Color;
-import design_mode.factory.abstractFactory.factory.AbstractFactory;
-import design_mode.factory.abstractFactory.factory.FactoryProducer;
-import design_mode.factory.abstractFactory.shape.Shape;
+import designMode.factory.abstractFactory.color.Color;
+import designMode.factory.abstractFactory.factory.AbstractFactory;
+import designMode.factory.abstractFactory.factory.FactoryProducer;
+import designMode.factory.abstractFactory.shape.Shape;
 
 public class AbstractFactoryPatternDemo {
     public static void main(String[] args) {

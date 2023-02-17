@@ -1,4 +1,4 @@
-package design_mode.factory.abstractFactory.factory;
+package designMode.factory.abstractFactory.factory;
 
 public class FactoryProducer {
     public static AbstractFactory getFactory(String choice){

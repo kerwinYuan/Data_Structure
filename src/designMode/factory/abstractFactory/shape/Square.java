@@ -1,4 +1,4 @@
-package design_mode.factory.abstractFactory.shape;
+package designMode.factory.abstractFactory.shape;
 
 public class Square implements Shape {
     @Override

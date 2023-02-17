@@ -1,9 +1,8 @@
-package design_mode.factory.abstractFactory.factory;
+package designMode.factory.abstractFactory.factory;
 
-import design_mode.factory.abstractFactory.color.Color;
-import design_mode.factory.abstractFactory.color.Red;
-import design_mode.factory.abstractFactory.shape.Rectangle;
-import design_mode.factory.abstractFactory.shape.Shape;
+import designMode.factory.abstractFactory.color.Color;
+import designMode.factory.abstractFactory.shape.Rectangle;
+import designMode.factory.abstractFactory.shape.Shape;
 
 public class ShapeFactory extends AbstractFactory {
     @Override

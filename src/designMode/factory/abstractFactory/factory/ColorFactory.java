@@ -1,9 +1,9 @@
-package design_mode.factory.abstractFactory.factory;
+package designMode.factory.abstractFactory.factory;
 
-import design_mode.factory.abstractFactory.color.Blue;
-import design_mode.factory.abstractFactory.color.Color;
-import design_mode.factory.abstractFactory.color.Red;
-import design_mode.factory.abstractFactory.shape.Shape;
+import designMode.factory.abstractFactory.color.Blue;
+import designMode.factory.abstractFactory.color.Color;
+import designMode.factory.abstractFactory.color.Red;
+import designMode.factory.abstractFactory.shape.Shape;
 
 public class ColorFactory extends AbstractFactory {
     @Override

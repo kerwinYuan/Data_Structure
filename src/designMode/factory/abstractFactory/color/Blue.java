@@ -1,4 +1,4 @@
-package design_mode.factory.abstractFactory.color;
+package designMode.factory.abstractFactory.color;
 
 public class Blue implements Color {
     @Override

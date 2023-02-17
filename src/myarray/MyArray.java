@@ -29,12 +29,22 @@ public class MyArray<E> {
         return size;
     }
 
-    public void add(int index,E e){
-        if(size == data.length){
-            throw new IllegalArgumentException("data is full");
+    public E[] resize(int capacity){
+
+        E[] newData = (E []) new Object[capacity];
+
+        for(int i = 0 ; i < data.length ; i++){
+            newData[i] = data[i];
         }
+       return newData;
+    }
+
+    public void add(int index,E e){
         if(index < 0 && index > size){
             throw  new IllegalArgumentException("index is illegal");
+        }
+        if (size == data.length){
+            data = resize(data.length >>1);
         }
         for(int i = size ; i >= index ;i--){
             data[i+1] = data[i];
@@ -60,6 +70,9 @@ public class MyArray<E> {
             data[i] = data[i+1];
         }
         size--;
+        if (size / 4 == data.length && size / 4 !=0){
+            data = resize(data.length/2);
+        }
         return temp;
     }
 
