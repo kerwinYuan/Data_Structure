@@ -35,6 +35,36 @@ public class MyBinaryTree {
         }
     }
 
+    public void toMessageByFront(Node node){
+       if (node.leftNode != null){
+           toMessageByFront(node.leftNode);
+       }
+        System.out.println(node.value);
+        if (node.rightNode != null){
+            toMessageByFront(node.rightNode);
+        }
+    }
+
+    public void toMessageByMiddle(Node node){
+        System.out.println(node.value);
+        if (node.leftNode != null){
+            toMessageByMiddle(node.leftNode);
+        }
+        if (node.rightNode != null){
+            toMessageByMiddle(node.rightNode);
+        }
+    }
+
+    public void toMessageByBackend(Node node){
+        if (node.leftNode != null){
+            toMessageByBackend(node.leftNode);
+        }
+        if (node.rightNode != null){
+            toMessageByBackend(node.rightNode);
+        }
+        System.out.println(node.value);
+    }
+
     public static void main(String[] args) {
         MyBinaryTree myBinaryTree = new MyBinaryTree();
         myBinaryTree.add(3);
@@ -42,10 +72,11 @@ public class MyBinaryTree {
         myBinaryTree.add(4);
         myBinaryTree.add(1);
         myBinaryTree.add(5);
-        System.out.println(myBinaryTree.root.rightNode.value);
+        //System.out.println(myBinaryTree.root.rightNode.value);
+        myBinaryTree.toMessageByBackend(myBinaryTree.root);
     }
-
 }
+
 class Node{
     public int value;
     public Node leftNode;
